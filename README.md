@@ -8,7 +8,7 @@
 
 Tokenizer is a C Library for finding tokens of the given formats
 
-It takes a string as a command line argument and isolates individual (valid) tokens in the string
+It takes a string as a command line argument and isolates individual (valid) tokens (seperated by white space) in the string
 
 ### Token Formats
 
@@ -17,19 +17,20 @@ An *octal* integer constant token is a 0 followed by any number of octal digits 
 A *hexadecimal* integer constant token is 0x (or 0X) followed by any number of hexadecimal digits (i.e. 0-9, a-f, A-F).
 A *floating-point* constant token is follows the rules for floating-point constants in Java or C.
 
-## What the Code Does:
+## How the Code Works:
         This program takes in a string as a command line argument and prints out the valid numerical tokens found 
     in the string along with their respective C types. Then it passes the string to TKCreate which reads 
     through the string character by character according to the finite state machine. As is reads the string 
     it places each valid character into a separate string with only valid tokens separated by one ‘ ‘ 
     character each and it determines what type of number the token is. Tokens can be ended by either white 
-    space or an escape character. Escape characters are printed out as they are found while creating the 
-    tokenstream. If it is found that the token is invalid, meaning the token could not be ended where an 
-    escape character or a space was found, then the invalid token is printed out as escape characters in left 
-    to right order. Then the pointer returns to the front of that token and overwrites it with the next one.
-    As the program accesses each state the type of the current token is changed to reflect what the token 
-    would be if it ended at that step. TKCreate returns the TokenizerT struct containing the finalized 
-    tokenstream and array of ints representative of the type of each token in the string.  
+    space or an escape character. Escape characters are any characters which cannot occur at a given location in 
+    the token stream. They are printed out as they are found while creating the tokenstream. If it is found that 
+    the token is invalid, meaning the token could not be ended where an escape character or a space was found, 
+    then the invalid token is printed out as escape characters in left to right order. Then the pointer returns 
+    to the front of that token and overwrites it with the next one. As the program accesses each state the type 
+    of the current token is changed to reflect what the token would be if it ended at that step. TKCreate returns 
+    the TokenizerT struct containing the finalized tokenstream and array of ints representative of the type of 
+    each token in the string.  
     
         This struct is then passed to TKGetNextToken which reads through the tokenstream and creates a 
     malloced string of the type (as a string not as an int) and token for the next token in the tokenstream. 
