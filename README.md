@@ -40,9 +40,6 @@ A *floating-point* constant token is follows the rules for floating-point consta
     
     TKDestroy is then called to free all of the space malloced by TKCreate. It does and the program ends.
 ## Features:
-    - Reallocs the finalized tokenstream and type array at the end of 
-        TKCreate to ensure that dynamic memory usage is kept to a minimum
-    - Original pointer to beginning of finalized tokenstream and int array is kept 
-        so if you wanted to get all tokens in order again, before calling TKDestroy you could  
-    - Stores types as integers to save space used until you get the token back 
-        with TKGetNextToken
+- Reallocs the finalized tokenstream and type array at the end of TKCreate to ensure that dynamic memory usage is kept to a minimum
+- Original pointer to beginning of finalized tokenstream and int array is kept so if you wanted to get all tokens in order again, before calling TKDestroy you could  
+- Stores types as integers to save space used until you get the token back with TKGetNextToken
