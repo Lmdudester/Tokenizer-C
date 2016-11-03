@@ -8,7 +8,7 @@
 
 Tokenizer is a C Library for finding tokens of the given formats
 
-It takes a string as a command line argument and isolates individual (valid) tokens in the sting
+It takes a string as a command line argument and isolates individual (valid) tokens in the string
 
 ### Token Formats
 
