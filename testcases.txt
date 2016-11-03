@@ -1,0 +1,385 @@
+Test Cases for Tokenizer.c
+
+_____Test Case 1_____
+" 0 800.3u9  q34,6.7rfe-9   .  3 02x45 0x1DFXP3  078r4 p "
+
+****Expected Output****
+
+Error [0x75] 
+Error [0x71] 
+Error [0x2c] 
+Error [0x72] 
+Error [0x66] 
+Error [0x65] 
+Error [0x2d] 
+Error [0x2e] 
+Error [0x78] 
+Error [0x58] 
+Error [0x50] 
+Error [0x72] 
+Error [0x70] 
+
+zero 0
+float 800.3
+decimal 9
+decimal 34
+float 6.7
+decimal 9
+decimal 3
+octal 02
+decimal 45
+hexadecimal 0x1DF
+decimal 3
+octal 078
+decimal 4
+
+****Actual Output****
+
+Error [0x75] 
+Error [0x71] 
+Error [0x2c] 
+Error [0x72] 
+Error [0x66] 
+Error [0x65] 
+Error [0x2d] 
+Error [0x2e] 
+Error [0x78] 
+Error [0x58] 
+Error [0x50] 
+Error [0x72] 
+Error [0x70] 
+
+zero 0
+float 800.3
+decimal 9
+decimal 34
+float 6.7
+decimal 9
+decimal 3
+octal 02
+decimal 45
+hexadecimal 0x1DF
+decimal 3
+octal 078
+decimal 4
+
+
+_____Test Case 2_____
+""
+
+****Expected Output****
+
+****Actual Output****
+
+
+_____Test Case 3_____
+"    "
+
+****Expected Output****
+
+****Actual Output****
+
+
+_____Test Case 4_____
+"32425 g3rg3421 r2g.43.t4 1e23f 0xw3f5y7 2.5 0 ==1 0x 34t 0..2"
+
+****Expected Output****
+
+Error [0x67] 
+Error [0x72] 
+Error [0x67] 
+Error [0x72] 
+Error [0x67] 
+Error [0x2e] 
+Error [0x34] 
+Error [0x33] 
+Error [0x2e] 
+Error [0x74] 
+Error [0x66] 
+Error [0x30] 
+Error [0x78] 
+Error [0x77] 
+Error [0x66] 
+Error [0x79] 
+Error [0x3d] 
+Error [0x3d] 
+Error [0x30] 
+Error [0x78] 
+Error [0x74] 
+Error [0x30] 
+Error [0x2e] 
+Error [0x2e] 
+
+decimal 32425
+decimal 3
+decimal 3421
+decimal 2
+decimal 4
+float 1e23
+decimal 3
+decimal 5
+decimal 7
+float 2.5
+zero 0
+decimal 1
+decimal 34
+decimal 2
+
+****Actual Output****
+
+Error [0x67] 
+Error [0x72] 
+Error [0x67] 
+Error [0x72] 
+Error [0x67] 
+Error [0x2e] 
+Error [0x34] 
+Error [0x33] 
+Error [0x2e] 
+Error [0x74] 
+Error [0x66] 
+Error [0x30] 
+Error [0x78] 
+Error [0x77] 
+Error [0x66] 
+Error [0x79] 
+Error [0x3d] 
+Error [0x3d] 
+Error [0x30] 
+Error [0x78] 
+Error [0x74] 
+Error [0x30] 
+Error [0x2e] 
+Error [0x2e] 
+
+decimal 32425
+decimal 3
+decimal 3421
+decimal 2
+decimal 4
+float 1e23
+decimal 3
+decimal 5
+decimal 7
+float 2.5
+zero 0
+decimal 1
+decimal 34
+decimal 2
+
+
+_____Test Case 5_____
+"2.3 4 6 8 9e0 0834 0x3D 3.4e-2 5.6e+1 0 1 1 1 0.2 112233"
+
+****Expected Output****
+
+float 2.3
+decimal 4
+decimal 6
+decimal 8
+float 9e0
+octal 0834
+hexadecimal 0x3D
+float 3.4e-2
+float 5.6e+1
+zero 0
+decimal 1
+decimal 1
+decimal 1
+float 0.2
+decimal 112233
+
+****Actual Ouput****
+
+float 2.3
+decimal 4
+decimal 6
+decimal 8
+float 9e0
+octal 0834
+hexadecimal 0x3D
+float 3.4e-2
+float 5.6e+1
+zero 0
+decimal 1
+decimal 1
+decimal 1
+float 0.2
+decimal 112233
+
+
+_____Test Case 6_____
+"Oh Boy Test Cases Are Fun..."
+
+****Expected Output****
+
+Error [0x4f] 
+Error [0x68] 
+Error [0x42] 
+Error [0x6f] 
+Error [0x79] 
+Error [0x54] 
+Error [0x65] 
+Error [0x73] 
+Error [0x74] 
+Error [0x43] 
+Error [0x61] 
+Error [0x73] 
+Error [0x65] 
+Error [0x73] 
+Error [0x41] 
+Error [0x72] 
+Error [0x65] 
+Error [0x46] 
+Error [0x75] 
+Error [0x6e] 
+Error [0x2e] 
+Error [0x2e] 
+Error [0x2e] 
+
+****Actual Output****
+
+Error [0x4f] 
+Error [0x68] 
+Error [0x42] 
+Error [0x6f] 
+Error [0x79] 
+Error [0x54] 
+Error [0x65] 
+Error [0x73] 
+Error [0x74] 
+Error [0x43] 
+Error [0x61] 
+Error [0x73] 
+Error [0x65] 
+Error [0x73] 
+Error [0x41] 
+Error [0x72] 
+Error [0x65] 
+Error [0x46] 
+Error [0x75] 
+Error [0x6e] 
+Error [0x2e] 
+Error [0x2e] 
+Error [0x2e]  
+
+
+_____Test Case 7_____
+" 245 089 33.5"
+
+****Expected Output****
+
+Error [0x39] 
+
+decimal 245
+octal 08
+float 33.5
+
+****Actual Output****
+
+Error [0x39] 
+
+decimal 245
+octal 08
+float 33.5
+
+
+_____Test Case 8_____
+"2367 3e4 0 "
+
+****Expected Output****
+
+decimal 2367
+float 3e4
+zero 0
+
+****Actual Output****
+
+decimal 2367
+float 3e4
+zero 0
+
+
+_____Test Case 9_____
+"0.233456e 9123214324e-1"
+
+****Expected Output****
+
+Error [0x30] 
+Error [0x2e] 
+Error [0x32] 
+Error [0x33] 
+Error [0x33] 
+Error [0x34] 
+Error [0x35] 
+Error [0x36] 
+Error [0x65] 
+
+float 9123214324e-1
+
+****Actual Output****
+
+Error [0x30] 
+Error [0x2e] 
+Error [0x32] 
+Error [0x33] 
+Error [0x33] 
+Error [0x34] 
+Error [0x35] 
+Error [0x36] 
+Error [0x65] 
+
+float 9123214324e-1
+
+
+_____Test Case 10_____
+"    C0mpu73r   4rch  ' 1.5   Fun.2    "
+
+****Expected Output****
+
+Error [0x43] 
+Error [0x6d] 
+Error [0x70] 
+Error [0x75] 
+Error [0x72] 
+Error [0x72] 
+Error [0x63] 
+Error [0x68] 
+Error [0x27] 
+Error [0x46] 
+Error [0x75] 
+Error [0x6e] 
+Error [0x2e] 
+
+zero 0
+decimal 73
+decimal 4
+float 1.5
+decimal 2
+
+****Actual Output****
+
+Error [0x43] 
+Error [0x6d] 
+Error [0x70] 
+Error [0x75] 
+Error [0x72] 
+Error [0x72] 
+Error [0x63] 
+Error [0x68] 
+Error [0x27] 
+Error [0x46] 
+Error [0x75] 
+Error [0x6e] 
+Error [0x2e] 
+
+zero 0
+decimal 73
+decimal 4
+float 1.5
+decimal 2
+
+
+
+
+
