@@ -1,5 +1,23 @@
 # Tokenizer-C
-## Description
+
+###Liam Davies - Rutgers University
+###Computer Architecture - Fall 2016  
+###Professor Brian Russel
+
+## Synopsis
+
+Tokenizer is a C Library for finding tokens of the given formats
+
+It takes a string as a command line argument and isolates individual (valid) tokens in the sting
+
+### Token Formats
+
+A *decimal* integer constant token is a digit (1-9) followed by any number of digits.
+An *octal* integer constant token is a 0 followed by any number of octal digits (i.e. 0-7).
+A *hexadecimal* integer constant token is 0x (or 0X) followed by any number of hexadecimal digits (i.e. 0-9, a-f, A-F).
+A *floating-point* constant token is follows the rules for floating-point constants in Java or C.
+
+## What the Code Does:
         This program takes in a string as a command line argument and prints out the valid numerical tokens found 
     in the string along with their respective C types. Then it passes the string to TKCreate which reads 
     through the string character by character according to the finite state machine. As is reads the string 
