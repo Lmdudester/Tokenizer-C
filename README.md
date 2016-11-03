@@ -12,10 +12,10 @@ It takes a string as a command line argument and isolates individual (valid) tok
 
 ### Token Formats
 
-A *decimal* integer constant token is a digit (1-9) followed by any number of digits.
-An *octal* integer constant token is a 0 followed by any number of octal digits (i.e. 0-7).
-A *hexadecimal* integer constant token is 0x (or 0X) followed by any number of hexadecimal digits (i.e. 0-9, a-f, A-F).
-A *floating-point* constant token is follows the rules for floating-point constants in Java or C.
+- A *decimal* integer constant token is a digit (1-9) followed by any number of digits.
+- An *octal* integer constant token is a 0 followed by any number of octal digits (i.e. 0-7).
+- A *hexadecimal* integer constant token is 0x (or 0X) followed by any number of hexadecimal digits (i.e. 0-9, a-f, A-F).
+- A *floating-point* constant token is follows the rules for floating-point constants in Java or C.
 
 ## How the Code Works:
         This program takes in a string as a command line argument and prints out the valid numerical tokens found 
